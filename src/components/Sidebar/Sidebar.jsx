@@ -77,7 +77,7 @@ const Sidebar = () => {
     //   color: "bg-orange-50 text-orange-600 border-orange-200",
     // },
     {
-      id: "rajasthanhistory",
+      id: "rajasthanHistory",
       name: "Raj. History",
       icon: <Layout size={20} />,
       color: "bg-blue-50 text-blue-600 border-blue-200",
