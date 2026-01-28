@@ -136,7 +136,7 @@ const Sidebar = () => {
     {
       id: "basic",
       name: "Basic",
-      questions: 20,
+      questions: 40,
       icon: <Star size={16} />,
       color: "bg-green-50 text-green-600",
     },
@@ -150,7 +150,7 @@ const Sidebar = () => {
     {
       id: "advanced",
       name: "Advanced",
-      questions: 60,
+      questions: 20,
       icon: <Target size={16} />,
       color: "bg-purple-50 text-purple-600",
     },
