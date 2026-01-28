@@ -66,7 +66,7 @@ const Sidebar = () => {
   const technologies = [
     {
       id: "bio",
-      name: "Bio",
+      name: "Biology Science",
       icon: <Globe size={20} />,
       color: "bg-orange-50 text-orange-600 border-orange-200",
     },
