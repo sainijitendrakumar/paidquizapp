@@ -34,7 +34,7 @@ export default function Navbar({ logoSrc }) {
     }
 
     window.dispatchEvent(
-      new CustomEvent("authChanged", { detail: { user: null } })
+      new CustomEvent("authChanged", { detail: { user: null } }),
     );
 
     setMenuOpen(false);
@@ -80,7 +80,7 @@ export default function Navbar({ logoSrc }) {
         {/* CENTER: Title */}
         <div className={navbarStyles.titleContainer}>
           <div className={navbarStyles.titleBackground}>
-            <h1 className={navbarStyles.titleText}>Hexagon Quiz Application</h1>
+            <h1 className={navbarStyles.titleText}>Quiz Application</h1>
           </div>
         </div>
 
@@ -89,10 +89,7 @@ export default function Navbar({ logoSrc }) {
           <div className={navbarStyles.spacer}></div>
 
           {/* My result button (NavLink so no onClick handler) */}
-          <NavLink
-            to="/result"
-            className={navbarStyles.resultsButton}
-          >
+          <NavLink to="/result" className={navbarStyles.resultsButton}>
             <Award className={navbarStyles.buttonIcon} />
             My result
           </NavLink>
@@ -102,15 +99,12 @@ export default function Navbar({ logoSrc }) {
               onClick={handleLogout}
               className={navbarStyles.logoutButton}
             >
-              <LogOut className={navbarStyles.buttonIcon}/>
+              <LogOut className={navbarStyles.buttonIcon} />
               Logout
             </button>
           ) : (
-            <NavLink
-              to="/login"
-              className={navbarStyles.loginButton}
-            >
-              <LogIn className={navbarStyles.buttonIcon}/>
+            <NavLink to="/login" className={navbarStyles.loginButton}>
+              <LogIn className={navbarStyles.buttonIcon} />
               Login
             </NavLink>
           )}
