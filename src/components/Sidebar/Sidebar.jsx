@@ -76,12 +76,12 @@ const Sidebar = () => {
     //   icon: <Globe size={20} />,
     //   color: "bg-orange-50 text-orange-600 border-orange-200",
     // },
-    // {
-    //   id: "css",
-    //   name: "CSS",
-    //   icon: <Layout size={20} />,
-    //   color: "bg-blue-50 text-blue-600 border-blue-200",
-    // },
+    {
+      id: "rajasthanhistory",
+      name: "Raj. History",
+      icon: <Layout size={20} />,
+      color: "bg-blue-50 text-blue-600 border-blue-200",
+    },
     // {
     //   id: "js",
     //   name: "JavaScript",
