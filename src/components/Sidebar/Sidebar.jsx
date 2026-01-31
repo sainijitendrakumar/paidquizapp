@@ -79,7 +79,7 @@ const Sidebar = () => {
     },
     {
       id: "rajasthanArtCulture",
-      name: "Rajasthan ArtCulture",
+      name: "Rajasthan Art & Culture",
       icon: <Code size={20} />,
       color: "bg-yellow-50 text-yellow-600 border-yellow-200",
     },
