@@ -70,30 +70,25 @@ const Sidebar = () => {
       icon: <Globe size={20} />,
       color: "bg-orange-50 text-orange-600 border-orange-200",
     },
-    // {
-    //   id: "html",
-    //   name: "HTML",
-    //   icon: <Globe size={20} />,
-    //   color: "bg-orange-50 text-orange-600 border-orange-200",
-    // },
+
     {
       id: "rajasthanHistory",
       name: "Raj. History",
       icon: <Layout size={20} />,
       color: "bg-blue-50 text-blue-600 border-blue-200",
     },
-    // {
-    //   id: "js",
-    //   name: "JavaScript",
-    //   icon: <Code size={20} />,
-    //   color: "bg-yellow-50 text-yellow-600 border-yellow-200",
-    // },
-    // {
-    //   id: "react",
-    //   name: "React",
-    //   icon: <Cpu size={20} />,
-    //   color: "bg-cyan-50 text-cyan-600 border-cyan-200",
-    // },
+    {
+      id: "rajasthanArtCulture",
+      name: "Rajasthan ArtCulture",
+      icon: <Code size={20} />,
+      color: "bg-yellow-50 text-yellow-600 border-yellow-200",
+    },
+    {
+      id: "rajasthanGeography",
+      name: "Rajasthan Geography",
+      icon: <Cpu size={20} />,
+      color: "bg-cyan-50 text-cyan-600 border-cyan-200",
+    },
     // {
     //   id: "node",
     //   name: "Node.js",
