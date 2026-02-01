@@ -25,7 +25,7 @@ export default function SignUpPage({ onSignupSuccess = null }) {
   const [submitError, setSubmitError] = useState("");
   const [loading, setLoading] = useState(false);
 
-  const API_BASE = "http://localhost:5000";
+  const API_BASE = "https://paidquizapp-bacend.onrender.com/";
 
   const validate = () => {
     const e = {};
@@ -62,8 +62,7 @@ export default function SignUpPage({ onSignupSuccess = null }) {
       let data = null;
       try {
         data = await resp.json();
-      } catch (e) {
-      }
+      } catch (e) {}
 
       if (!resp.ok) {
         const msg =
@@ -83,11 +82,10 @@ export default function SignUpPage({ onSignupSuccess = null }) {
               data.user || {
                 name: name.trim(),
                 email: email.trim().toLowerCase(),
-              }
-            )
+              },
+            ),
           );
-        } catch (err) {
-        }
+        } catch (err) {}
       }
 
       if (typeof onSignupSuccess === "function") {
@@ -96,10 +94,9 @@ export default function SignUpPage({ onSignupSuccess = null }) {
             data.user || {
               name: name.trim(),
               email: email.trim().toLowerCase(),
-            }
+            },
           );
-        } catch (err) {
-        }
+        } catch (err) {}
       }
       navigate("/login", { replace: true });
     } catch (err) {
@@ -112,23 +109,16 @@ export default function SignUpPage({ onSignupSuccess = null }) {
 
   return (
     <div className={signupStyles.pageContainer}>
-      <Link
-        to="/login"
-        className={signupStyles.backButton}
-      >
+      <Link to="/login" className={signupStyles.backButton}>
         <ArrowLeft className={signupStyles.backButtonIcon} />
         <span className={signupStyles.backButtonText}>Back</span>
       </Link>
 
       <div className={signupStyles.formContainer}>
-        <form
-          onSubmit={handleSubmit}
-        >
+        <form onSubmit={handleSubmit}>
           <div className={signupStyles.animatedBorder}>
             <div className={signupStyles.formContent}>
-              <h2
-                className={signupStyles.heading}
-              >
+              <h2 className={signupStyles.heading}>
                 <span className={signupStyles.headingIcon}>
                   <CheckCircle className={signupStyles.headingIconInner} />
                 </span>
@@ -166,9 +156,7 @@ export default function SignUpPage({ onSignupSuccess = null }) {
                   />
                 </div>
                 {errors.name && (
-                  <p className={signupStyles.errorText}>
-                    {errors.name}
-                  </p>
+                  <p className={signupStyles.errorText}>{errors.name}</p>
                 )}
               </label>
 
@@ -198,9 +186,7 @@ export default function SignUpPage({ onSignupSuccess = null }) {
                   />
                 </div>
                 {errors.email && (
-                  <p className={signupStyles.errorText}>
-                    {errors.email}
-                  </p>
+                  <p className={signupStyles.errorText}>{errors.email}</p>
                 )}
               </label>
 
@@ -244,17 +230,12 @@ export default function SignUpPage({ onSignupSuccess = null }) {
                   </button>
                 </div>
                 {errors.password && (
-                  <p className={signupStyles.errorText}>
-                    {errors.password}
-                  </p>
+                  <p className={signupStyles.errorText}>{errors.password}</p>
                 )}
               </label>
 
               {submitError && (
-                <p
-                  className={signupStyles.submitError}
-                  role="alert"
-                >
+                <p className={signupStyles.submitError} role="alert">
                   {submitError}
                 </p>
               )}

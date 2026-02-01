@@ -15,7 +15,7 @@ export default function LoginPage({ onLoginSuccess = null }) {
   const [loading, setLoading] = useState(false);
   const [submitError, setSubmitError] = useState("");
 
-  const API_BASE = "http://localhost:5000";
+  const API_BASE = "https://paidquizapp-bacend.onrender.com/";
 
   const validate = () => {
     const e = {};
@@ -61,7 +61,7 @@ export default function LoginPage({ onLoginSuccess = null }) {
           localStorage.setItem("authToken", data.token);
           localStorage.setItem(
             "currentUser",
-            JSON.stringify(data.user || { email: payload.email })
+            JSON.stringify(data.user || { email: payload.email }),
           );
         } catch (err) {
           // ignore storage errors
@@ -70,7 +70,7 @@ export default function LoginPage({ onLoginSuccess = null }) {
 
       const user = data.user || { email: payload.email };
       window.dispatchEvent(
-        new CustomEvent("authChanged", { detail: { user } })
+        new CustomEvent("authChanged", { detail: { user } }),
       );
 
       if (typeof onLoginSuccess === "function") onLoginSuccess(user);
@@ -95,17 +95,11 @@ export default function LoginPage({ onLoginSuccess = null }) {
       </Link>
 
       <div className={loginStyles.formContainer}>
-        <form
-          onSubmit={handleSubmit}
-          className={loginStyles.form}
-          noValidate
-        >
+        <form onSubmit={handleSubmit} className={loginStyles.form} noValidate>
           <div className={loginStyles.formWrapper}>
             <div className={loginStyles.animatedBorder}>
               <div className={loginStyles.formContent}>
-                <h2
-                  className={loginStyles.heading}
-                >
+                <h2 className={loginStyles.heading}>
                   <span className={loginStyles.headingIcon}>
                     <LogIn className={loginStyles.headingIconInner} />
                   </span>
@@ -142,9 +136,7 @@ export default function LoginPage({ onLoginSuccess = null }) {
                     />
                   </div>
                   {errors.email && (
-                    <p className={loginStyles.errorText}>
-                      {errors.email}
-                    </p>
+                    <p className={loginStyles.errorText}>{errors.email}</p>
                   )}
                 </label>
 
@@ -187,9 +179,7 @@ export default function LoginPage({ onLoginSuccess = null }) {
                     </button>
                   </div>
                   {errors.password && (
-                    <p className={loginStyles.errorText}>
-                      {errors.password}
-                    </p>
+                    <p className={loginStyles.errorText}>{errors.password}</p>
                   )}
                 </label>
 
