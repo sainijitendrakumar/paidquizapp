@@ -14,7 +14,9 @@ const Badge = ({ percent }) => {
   return <span className={resultStyles.badgeNeedsWork}>Needs Work</span>;
 };
 
-export default function MyResultPage({ apiBase = "http://localhost:5000" }) {
+export default function MyResultPage({
+  apiBase = "https://paidquizapp-bacend.onrender.com",
+}) {
   const [results, setResults] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -53,7 +55,7 @@ export default function MyResultPage({ apiBase = "http://localhost:5000" }) {
       } catch (err) {
         console.error(
           "Failed to fetch results:",
-          err?.response?.data || err.message || err
+          err?.response?.data || err.message || err,
         );
         if (!mounted) return;
         if (err?.response?.status === 401) {
@@ -102,7 +104,7 @@ export default function MyResultPage({ apiBase = "http://localhost:5000" }) {
         // silent — no need to block main UI; log for debug
         console.error(
           "Failed to fetch technologies:",
-          err?.response?.data || err.message || err
+          err?.response?.data || err.message || err,
         );
       }
     };
@@ -119,11 +121,11 @@ export default function MyResultPage({ apiBase = "http://localhost:5000" }) {
     const source = Array.isArray(results) ? results : [];
     const totalQs = source.reduce(
       (s, r) => s + (Number(r.totalQuestions) || 0),
-      0
+      0,
     );
     const totalCorrect = source.reduce(
       (s, r) => s + (Number(r.correct) || 0),
-      0
+      0,
     );
     const totalWrong = source.reduce((s, r) => s + (Number(r.wrong) || 0), 0);
     const pct = totalQs ? Math.round((totalCorrect / totalQs) * 100) : 0;
