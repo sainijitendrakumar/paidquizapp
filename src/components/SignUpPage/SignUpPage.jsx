@@ -25,8 +25,8 @@ export default function SignUpPage({ onSignupSuccess = null }) {
   const [submitError, setSubmitError] = useState("");
   const [loading, setLoading] = useState(false);
 
-  const API_BASE = "https://paidquizapp-bacend.onrender.com/";
-
+  const API_BASE = "https://paidquizapp-bacend.onrender.com";
+  // const API_BASE = "http://localhost:5000";
   const validate = () => {
     const e = {};
     if (!name.trim()) e.name = "Name is required";
